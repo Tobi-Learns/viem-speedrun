@@ -1,33 +1,63 @@
-# viem-speedrun
-An updated version of Alchemy's "Learn How To Use Viem" tutorial
-https://www.youtube.com/watch?v=P9oUqVsHBkA
-Check out the viem docs: viem.sh
+# **Viem Speedrun 🚀**  
+An updated version of Alchemy's **"Learn How to Use Viem"** tutorial.  
+📺 Watch the tutorial: [YouTube](https://www.youtube.com/watch?v=P9oUqVsHBkA)  
+📚 Read the **Viem docs**: [viem.sh](https://viem.sh)
 
-Install dependencies
-pnpm i
+---
 
-Run p-key.js to generate a Private Key
+## 📦 **Setup**
+### 1️⃣ Install Dependencies  
+```sh
+pnpm install
+```
+
+### 2️⃣ Generate a Private Key  
+```sh
 node src/p-key
+```
 
-Paste your private key and API in an .env file
-Get your free Alchemy API by signing up here https://dashboard.alchemy.com/?a=youtube-signup
+### 3️⃣ Set Up Your Environment Variables  
+- Get a free Alchemy API Key: [Sign Up Here](https://dashboard.alchemy.com/?a=youtube-signup)  
+- Paste your **private key** and **API key** into a `.env` file.
 
-Compile contract
+---
+
+## ⚙️ **Compile the Smart Contract**
+```sh
 solc --optimize --combined-json abi,bin contracts/Fun.sol | jq . > artifacts/Fun.json
-// Slight difference from video for formatting 
+```
+> 💡 *This formatting is slightly different from the tutorial video.*
 
-Run 1-account.ts
+---
+
+## 🚀 **Run the Scripts**
+### **1️⃣ Create an Account**
+```sh
 npx ts-node src/1-account
-//output: privateKey, accountAddress, Balance
+```
+✅ **Output:** `privateKey, accountAddress, Balance`
 
-Run 2-contracts.ts
+### **2️⃣ Deploy the Contract**
+```sh
 npx ts-node src/2-contracts
-//output: contract address
+```
+✅ **Output:** `contract address`
 
-Paste contract address in this line:
-const contractAddress = "contract address";
+✏️ **Paste the contract address** into this line inside your script:
+```ts
+const contractAddress = "your_contract_address";
+```
 
-Run 3-events.ts
+### **3️⃣ Track Contract Events**
+```sh
 npx ts-node src/3-events
-//output: event changes
-//it runs but it's a little bit broken and i can't solve it
+```
+✅ **Output:** `Event changes`  
+⚠️ *This runs but has some minor issues—currently debugging!*
+
+---
+
+## 🎯 **What's Next?**
+- [ ] Fix `3-events.ts` script  
+- [ ] Improve error handling  
+- [ ] Optimize contract deployment  
